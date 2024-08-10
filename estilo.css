@@ -1,0 +1,226 @@
+/* Estilos base */
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&family=Protest+Strike&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #333; /* Texto oscuro */
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Asegura que el body cubra toda la altura de la ventana */
+  background-color: #f7f7f7; /* Fondo gris claro */
+}
+
+/* Animación de fondo minimalista */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(45deg, #76c6d6, #63d0ee, #2659f0);
+  animation: animateBackground 15s linear infinite alternate;
+}
+
+@keyframes animateBackground {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Contenedor principal */
+.content {
+  background-color: #ffffff; /* Fondo blanco */
+  padding: 20px;
+  border-radius: 10px; /* Bordes redondeados */
+  max-width: 100%;
+  box-shadow: 0px 0px 80px rgba(0, 0, 0, 0.36); /* Sombra suave */
+  width: 700px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+}
+
+/* Título */
+h1 {
+  font-size: 2.5rem; /* Tamaño adaptativo para diferentes pantallas */
+  margin: 20px 0;
+  color: #0730c5; /* Color naranja */
+  font-family: "Protest Strike", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Etiqueta beta */
+.beta {
+  color: white;
+  background-color: #ff8b26;
+  font-size: 1rem; /* Tamaño ajustable para mejor adaptabilidad */
+  border-radius: 5px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+  padding: 2px 5px;
+}
+
+/* Contenedor de elementos */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%; /* Asegura que el contenedor se ajuste a la pantalla */
+}
+
+/* Contenedores individuales */
+.container2 {
+  width: 100%;
+  max-width: 600px; /* Ancho máximo para evitar que se vuelva demasiado ancho */
+  margin: 10px;
+  padding: 20px;
+  transition: all .3s ease-in; /* Transición suave */
+  background-color: #f0e9e9; /* Fondo gris suave */
+ 
+}
+
+
+.drop-area {
+  width: 435px;
+  text-align: center;
+  flex: 1;
+  margin: 10px; /* Espacio entre los contenedores */
+  border: 3px dashed #ff8b26;
+  box-sizing: border-box; /* El borde se incluye en el ancho y alto del contenedor */
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  transition: all .1s ease-in;
+}
+.drop-area:hover{
+  scale: 0.995;
+  opacity: 0.6;
+  filter: brightness(0.5);
+}
+#form{
+  width: 350px;
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.file-input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+
+.container2 {
+  background-color: #f8f8f8; /* Fondo gris suave */
+  overflow-y: none;
+}
+
+/* Estilos para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+  .content {
+    width: 90%; /* Reducir el ancho en pantallas más pequeñas */
+    max-width: none; /* Restablecer el ancho máximo */
+  }
+
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .drop-area,
+  .container2 {
+    width: 100%; /* Ancho completo para pantallas más pequeñas */
+  }
+}
+
+.archivos_subidos{
+  border: 2px solid #ff8b26;
+  font-size: 1rem; 
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  border-radius: 10px;
+  margin: 10px;
+  background: none;
+}
+
+.archivos_subidos .nombre{
+  padding: 10px;
+  width: 400px;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.archivos_subidos .boton{
+  
+  padding: 10px;
+
+}
+
+button{
+  border: none;
+  color: red;
+}
+
+button:hover{
+  transform: scale(1.2);
+  transition: 1s;
+  cursor: pointer;
+}
+.file-input{
+display: none;
+}
+
+.botn{
+  color: #0730c5;
+  font-weight: bold;
+}
+.botn:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: 1s;
+}
+
+.pila{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+footer{
+  color: white;
+  margin: 20px;
+  text-shadow: 0px 0px 5px black;
+}
